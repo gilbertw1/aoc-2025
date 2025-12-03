@@ -1,0 +1,2 @@
+Example input for Day 1
+Replace this with your actual input from adventofcode.com

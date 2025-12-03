@@ -1,3 +1,7 @@
 .zig-cache/
 zig-out/
 *.o
+
+# Keep example files but ignore actual input data
+data/day*.txt
+!data/day01.txt
