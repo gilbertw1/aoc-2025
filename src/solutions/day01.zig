@@ -22,18 +22,20 @@ pub fn solve(allocator: std.mem.Allocator) !void {
 }
 
 fn solvePart1(allocator: std.mem.Allocator, input: []const u8) !i64 {
+    // TODO: Implement part 1 solution
+    // Remove these unused parameter suppressions when implementing:
     _ = allocator;
     _ = input;
     
-    // TODO: Implement part 1 solution
     return 0;
 }
 
 fn solvePart2(allocator: std.mem.Allocator, input: []const u8) !i64 {
+    // TODO: Implement part 2 solution
+    // Remove these unused parameter suppressions when implementing:
     _ = allocator;
     _ = input;
     
-    // TODO: Implement part 2 solution
     return 0;
 }
 
