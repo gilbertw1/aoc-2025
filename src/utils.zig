@@ -11,7 +11,12 @@ pub fn loadInput(allocator: std.mem.Allocator, day: u8) ![]u8 {
     
     const file_size = try file.getEndPos();
     const buffer = try allocator.alloc(u8, file_size);
-    _ = try file.readAll(buffer);
+    errdefer allocator.free(buffer);
+    
+    const bytes_read = try file.readAll(buffer);
+    if (bytes_read != file_size) {
+        return error.UnexpectedEndOfFile;
+    }
     
     return buffer;
 }
@@ -24,7 +29,12 @@ pub fn loadInputFromPath(allocator: std.mem.Allocator, path: []const u8) ![]u8 {
     
     const file_size = try file.getEndPos();
     const buffer = try allocator.alloc(u8, file_size);
-    _ = try file.readAll(buffer);
+    errdefer allocator.free(buffer);
+    
+    const bytes_read = try file.readAll(buffer);
+    if (bytes_read != file_size) {
+        return error.UnexpectedEndOfFile;
+    }
     
     return buffer;
 }
